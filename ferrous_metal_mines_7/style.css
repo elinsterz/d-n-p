@@ -19,12 +19,14 @@ html{
   stroke-width: 0.1px;
   stroke-linejoin: round;
 }
+
 .mesh {
   fill: none;
   stroke:white;
   stroke-width: 1px;
   stroke-linejoin: square;
 }
+
 p {
   font-family: sans-serif;
   color: white;
@@ -36,15 +38,30 @@ body{
 }
 
 #title-div{
-  display: inline-block;
+  display: block;
 }
 
 #title-text{
   line-height: 1.2em;
+  font-family: Helvetica, sans-serif;
+  padding-top: 3%;
+}
+
+#about-div{
+  display: block;
+  float: left;
+}
+
+#about-text{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.15em;
+  letter-spacing: 0.25pt;
+  line-height: 1.4em;
+  padding-top: 5%;
 }
 
 #info-div{
-  display: inline-block;
+  display: block;
   float: right;
   padding: 2% 2% 2% 1.5%;
   background-color: blue;
