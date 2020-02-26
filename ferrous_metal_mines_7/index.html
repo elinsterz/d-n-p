@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ferrous Metal Mines</title>
+
+
+  <!--d3js-->
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class='container'>
+    <div id='main-row' class='row'>
+
+      <!--TITLE-->
+      <div id='title-div' class='col-md-6'>
+        <p id='title-text'>Ferrous Metal Mines
+          <br>
+          in United States
+        </p>
+      </div>
+
+      <!--RIGHT INFO DIV-->
+      <div id='info-div' class='col-md-6'>
+        <!--MINE NAME-->
+        <div class='text-div'>
+          <p id='mine-name' class='serif-title'>Mine Information</p>
+        </div>
+
+        <!--COMPANY-->
+        <div class='text-div' id='company-div'>
+          <p id='company' class='sans-text'>Company</p>
+          <p id='company-name' class='serif-text'>---</p>
+        </div>
+
+        <!--COUNTY, STATE-->
+        <div class='text-div' id='county-div'>
+          <p id='county' class='sans-text'>County, State</p>
+          <p class='serif-text'><span id='county-name'>---</span> <span id='state-name'></span></p>
+        </div>
+
+        <!--COMMODITY-->
+        <div class='text-div' id='commodity-div'>
+          <p id='commodity' class='sans-text'>Commodity</p>
+          <p id='commodity-name' class='serif-text'>---</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+3
+  <script type="text/javascript">
+    var width = window.innerWidth,
+      height = window.innerHeight,
+      radius = 3;
+
+    // set projection
+    var projection = d3.geo.mercator();
+
+    // create path variable
+    var path = d3.geo.path().projection(projection);
+
+    d3.json("us.json", function (error, topo) {
+      console.log(topo);
+
+      states = topojson.feature(topo, topo.objects.states).features;
+
+      // set projection parameters
+      projection.scale(800).center([-93, 38.5]);
+
+      // create svg variable
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+      // add states from topojson
+      svg
+        .selectAll("path")
+        .data(states)
+        .enter()
+        .append("path")
+        .attr("class", "feature")
+        .style("fill", d3.rgb(255, 255, 255))
+        .attr("d", path);
+
+      // put border around states
+      svg
+        .append("path")
+        .datum(
+          topojson.mesh(topo, topo.objects.states, function (a, b) {
+            return a !== b;
+          })
+        )
+        .attr("class", "mesh")
+        .attr("d", path);
+
+
+      /*--- FERROUS METAL MINES ---*/
+      d3.csv("ferrous_metal_mines.csv", function (data) {
+        data.forEach(function (d) {
+          console.log(d);
+          console.log("latitude metal mines: " + d.LATITUDE);
+          console.log("longitude metal mines: " + d.LONGITUDE);
+        });
+
+        // add circles to svg
+        svg
+          .selectAll("circle")
+          .data(data)
+          .enter()
+          .append("circle")
+          .attr("cx", function (d) {
+            return projection([d.LONGITUDE, d.LATITUDE])[0];
+          })
+          .attr("cy", function (d) {
+            return projection([d.LONGITUDE, d.LATITUDE])[1];
+          })
+          .attr("r", function (d) {
+            //return 2 + "px";
+            return radius;
+            //return Math.sqrt(d.pop2014) + "px";
+          })
+          .attr("fill", "#0000ff")
+          .attr("fill-opacity", 1)
+
+          /* ----- MOUSE OVER ------ */
+          .on("mouseover", function (d, i) {
+            //selecting circle 
+            d3.select(this)
+              .transition()
+              .duration("150")
+              .attr("opacity", "1")
+              .attr('fill', '#0000ff')
+              .attr("r", function (d) {
+                return radius * 7;
+                console.log("radius: " + radius);
+              })
+
+            // Select the element by class/id, use .text to set the content
+            d3.select("#mine-name").text(d['SITE_NAME']);
+            d3.select("#company-name").text(d['COMPANY_NA']);
+            d3.select("#county-name").text(d['COUNTY'] + ', ');
+            d3.select("#state-name").text(d['STATE_LOCA']);
+            d3.select("#commodity-name").text(d['COMMODITY']);
+          })
+
+          /* ----- MOUSE OUT ------ */
+          .on("mouseout", function (d, i) {
+            d3.select(this)
+              .transition()
+              .duration("150")
+              .attr('fill', '#0000ff')
+              .attr("opacity", "1")
+              .attr("r", function (d) {
+                return radius;
+                consolÎe.log("radius: " + radius);
+              })
+
+            // Select the element by class/id, use .text to set the content
+            d3.select("#mine-name").text('Mine Information');
+            d3.select("#company-name").text('---');
+            d3.select("#county-name").text('---');
+            d3.select("#state-name").text('');
+            d3.select("#commodity-name").text('---');
+          });
+      });
+    });
+  </script>
+</body>
+
+</html>
