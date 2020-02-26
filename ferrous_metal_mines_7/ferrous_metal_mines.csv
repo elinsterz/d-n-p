@@ -1,0 +1,25 @@
+X,Y,FID,MINOP3X020,COMMODITY,SITE_NAME,COMPANY_NA,STATE_LOCA,COUNTY,LATITUDE,LONGITUDE,PLANT_MIN
+-91.132137599270791,37.604053314209061,1,1,Cobalt,Buick-Casteel Mine,Doe Run Resources Corp,Missouri,Iron,37.604,-91.132,M
+-109.892746984485711,45.387946833779317,2,2,Cobalt,Stillwater Mine,Stillwater Mining Co,Montana,Stillwater,45.388,-109.892,M
+-110.083753346339861,45.507943980530229,3,3,Cobalt,East Boulder Mine,Stillwater Mining Co,Montana,Sweet Grass,45.508,-110.083,M
+-87.597142489834013,46.443946110124841,4,4,Iron,Empire Mine,Cleveland Cliffs Inc,Michigan,Marquette,46.444,-87.597,M/P
+-87.642142126957594,46.44694602184142,5,5,Iron,Tilden Mine,Cleveland Cliffs Inc,Michigan,Marquette,46.447,-87.642,M/P
+-92.554192254668791,47.443936969215713,6,6,Iron,United Taconite Mine,Cleveland Cliffs Inc,Minnesota,Saint Louis,47.444,-92.554,M/P
+-92.976195308966339,47.481939916793685,7,7,Iron,Hibbing Taconite Mine,Hibbing Taconite Co,Minnesota,Saint Louis,47.482,-92.976,M/P
+-92.521189079912077,47.560933728508758,8,8,Iron,Minorca Mine,Inland Steel Mining Co,Minnesota,Saint Louis,47.561,-92.521,M/P
+-91.942168149240686,47.661926388292159,9,9,Iron,Peter Mitchell Mine,Northshore Mining Co,Minnesota,Saint Louis,47.662,-91.942,M/P
+-93.062200233553938,47.413942281211291,10,10,Iron,Keetac Mine,US Steel,Minnesota,Saint Louis,47.414,-93.062,M/P
+-92.6441895450115,47.52393554039287,11,11,Iron,Minntac Mine,US Steel,Minnesota,Saint Louis,47.524,-92.644,M/P
+-111.148661613542615,31.871088674202941,12,12,Molybdenum,Sierrita Mine,Phelps Dodge Corp,Arizona,Pima,31.871,-111.148,M/P
+-113.236765072450126,34.590024223638977,13,13,Molybdenum,Bagdad Mine,Phelps Dodge Corp,Arizona,Yavapai,34.59,-113.236,M/P
+-105.841575563561378,39.768993269523719,14,14,Molybdenum,Henderson Mine,Phelps Dodge / Climax Molybdenum Corp,Colorado,Clear Creek,39.769,-105.841,M/P
+-114.553917003766685,44.308921693481345,15,15,Molybdenum,Thompson Creek Mine,Thompson Creek Metals Co,Idaho,Custer,44.309,-114.553,M
+-112.510867252821413,46.004933078998356,16,16,Molybdenum,Continental East Mine,Montana Resources,Montana,Silver Bow,46.005,-112.51,M/P
+-105.492570820586877,36.697034220752641,17,17,Molybdenum,Questa Mine,Molycorp Inc,New Mexico,Taos,36.697,-105.492,M
+-112.150786894799353,40.53295210775353,18,18,Molybdenum,Bingham Canyon Mine,Kennecott Utah Copper Corp,Utah,Salt Lake,40.533,-112.15,M
+-109.892746984485711,45.387946833779317,19,19,Nickel,Stillwater Mine,Stillwater Mining Co,Montana,Stillwater,45.388,-109.892,M
+-110.083753346339861,45.507943980530229,20,20,Nickel,East Boulder Mine,Stillwater Mining Co,Montana,Sweet Grass,45.508,-110.083,M
+-111.148661613542615,31.871088674202941,21,21,Rhenium,Sierrita Mine,Phelps Dodge Corp,Arizona,Pima,31.871,-111.148,M/P
+-113.236765072450126,34.590024223638977,22,22,Rhenium,Bagdad Mine,Phelps Dodge Corp,Arizona,Yavapai,34.59,-113.236,M/P
+-112.510867252821413,46.004933078998356,23,23,Rhenium,Continental East Mine,Montana Resources,Montana,Silver Bow,46.005,-112.51,M/P
+-112.150786894799353,40.53295210775353,24,24,Rhenium,Bingham Canyon Mine,Kennecott Utah Copper Corp,Utah,Salt Lake,40.533,-112.15,M
