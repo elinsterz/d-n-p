@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ferrous Metal Mines</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ferrous Metal Mines</title>
 
 
   <!--d3js-->
@@ -24,19 +24,13 @@
     <div id='main-row' class='row'>
 
       <!--TITLE-->
-      <div id='title-div' class='col-md-12'>
-        <p id='title-text'>Ferrous Metal Mines in United States
+      <div id='title-div' class='col-md-6'>
+        <p id='title-text'>Ferrous Metal Mines
+          <br>
+          in United States
         </p>
       </div>
-
-      <div id='about-div' class='col-md-5'>
-        <p id='about-text'>
-          This dataset is from data.world in the Homeland Infrastructure Foundation library. The data represent commodities covered by
-          the Minerals Information Team (MIT) of the U.S. Geological Survey, and the operations are those considered
-          active in 2003 and surveyed by the MIT.
-        </p>
-      </div>
-
+      
 
       <!--RIGHT INFO DIV-->
       <div id='info-div' class='col-md-6'>
@@ -66,7 +60,7 @@
       </div>
     </div>
   </div>
-  3
+3
   <script type="text/javascript">
     var width = window.innerWidth,
       height = window.innerHeight,
@@ -84,7 +78,7 @@
       states = topojson.feature(topo, topo.objects.states).features;
 
       // set projection parameters
-      projection.scale(770).center([-93, 35.5]);
+      projection.scale(800).center([-93, 40.5]);
 
       // create svg variable
       var svg = d3
